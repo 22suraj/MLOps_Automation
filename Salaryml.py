@@ -8,8 +8,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random
 from sklearn.linear_model import LinearRegression
 model = LinearRegression()
 model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-from sklearn.metrics import accuracy_score
-accuracy = accuracy_score(y_test,y_pred)
-print(accuracy)
+accuracy = model.score(X_test,y_test)
+print(accuracy*100)
 
